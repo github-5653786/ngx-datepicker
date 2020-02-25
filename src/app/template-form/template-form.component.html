@@ -25,7 +25,7 @@
             </label>
             <input type="password" class="form-control" id="Password" name="pass1" ngModel required [(ngModel)]=pass
                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" #pass1="ngModel" maxlength="15" autocomplete="off">
-            <span style="color: red;">{{ 15 - pass.length }} characters left</span>
+            <span class="error">{{ 15 - pass.length }} characters left</span>
             <span *ngIf="showIcon" (click)="iconHide()" class="icon"><i class='fas fa-eye'></i></span>
             <span *ngIf="showIcons" (click)="iconHide()" class="icon"><i class='fas fa-eye-slash'></i></span>
             <div *ngIf="pass1.touched || pass1.errors?.required && for.submitted">

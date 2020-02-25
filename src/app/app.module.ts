@@ -43,7 +43,7 @@ import { TemplateFormComponent } from './template-form/template-form.component';
     BsDatepickerModule.forRoot(),
     TypeaheadModule.forRoot(),
     AgmCoreModule.forRoot({
-      apiKey: "AIzaSyDjFAqRT7uk1Xkgr_X1-cyHrqIOizKjX9A"
+      apiKey: "google api key"
     })
   ],
   providers: [AutocompleteServiceService],
