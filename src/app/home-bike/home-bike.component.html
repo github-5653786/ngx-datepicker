@@ -1,0 +1,56 @@
+<form id="frm" #frmname="ngForm" class="form-inline" (ngSubmit)="frmname.form.valid && onSubmit()">
+    <div class="container mask">
+        <div class="row">
+            <div class="path-2-copy-2">
+                <p class="insurance-for">Bike Brand</p>
+                <input type="text" [typeahead]="dropDownValues" [typeaheadMinLength]="3" [typeaheadSingleWords]="true"
+                    autocomplete="off" class="form-control hide-border-1" [(ngModel)]="bike"
+                    (ngModelChange)="bikebrand($event)" (typeaheadOnSelect)="selectBrand($event)"
+                    placeholder="Search Bike" name="city" id="city" #brand="ngModel" (ngModelChange)="hide()"
+                    (blur)="onBlur()" required>
+                <span class="icon" id="show"><label for="city" class="fa fa-search"></label></span>
+                <span class="icon" id="hide" style="display: none;"><i class="fa fa-times"
+                        (click)="deleteInputs()"></i></span>
+                <div *ngIf="brand.errors && (brand.dirty || brand.touched|| frmname.submitted)" style="color: red; font-size: 13px;
+                        padding-left: 32px;">
+                    <div *ngIf="brand.errors.required" style="color: red;font-size: 13px;padding-left: 16px;">
+                        Brand is required.
+                    </div>
+                </div>
+            </div>
+            <div class="path-2-copy-0">
+                <p class="insurance-for">Bike Variant</p>
+                <input type="text" class="form-control hide-border-2" placeholder="Search for bike" autocomplete="off"
+                    id="varient" [(ngModel)]=Bike_Variant #Variant="ngModel" [typeahead]="post_new"
+                    [typeaheadMinLength]="0" (typeaheadOnSelect)="vehicleCode($event)" name="diparture"
+                    (ngModelChange)="hide2()" (focus)="autoFocusOnfirstInput()" (blur)="onBlur2()" required>
+                <span class="icon" id="show2"><label for="varient" class="fa fa-search"></label></span>
+                <span class="icon" id="hide2" style="display: none;"><i class="fa fa-times"
+                        (click)="deleteInputs2()"></i></span>
+                <div *ngIf="Variant.errors && (Variant.dirty || Variant.touched|| frmname.submitted)" style="color: red; font-size: 13px;
+                        padding-left: 32px;">
+                    <div *ngIf="Variant.errors?.required" style="color: red;font-size: 13px;padding-left: 16px;">
+                        Variant is required.
+                    </div>
+                </div>
+            </div>
+            <div class="path-2-copy-2">
+                <p class="insurance-for">Vehicle Code</p>
+                <input type="text" class="form-control hide-border-2" placeholder="Enter Vehicle Code"
+                    autocomplete="off" id="date3" [(ngModel)]=vehicle_code #fname2="ngModel" name="vehicle" readonly>
+            </div>
+            <div class="path-2-copy-3">
+                <button type="reset" (click)="onSubmit()" class="rectangle-13-copy-2">
+                    <span class="get-quote">Get Quote</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+
+
+
+

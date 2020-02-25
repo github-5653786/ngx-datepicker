@@ -1,0 +1,8 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <label for="name">Search Country Name</label>
+            <input [(ngModel)]="selected" [typeahead]="country" id="name" (ngModelChange)="fun()" class="form-control">
+        </div>
+    </div>
+</div>

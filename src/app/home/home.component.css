@@ -1,0 +1,128 @@
+.mask {
+    /* background-color: #FFFFFF;
+    border: 1px solid #EAEAEA;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.04);
+    width: 915px;
+    height: 109px; */
+    display: inherit;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+}
+
+.path-2-copy-2 {
+    border: 1px solid #DDDDDD;
+    width: fit-content;
+    padding-right: 39px;
+    height: 108px;
+    padding: 12px;
+    /* position: relative; */
+}
+
+.path-2-copy-4 {
+    position: relative;
+    border: 1px solid #DDDDDD;
+    width: fit-content;
+    padding-right: 39px;
+    height: 108px;
+    padding: 12px;
+}
+
+.path-2-copy-3 {
+    border: 1px solid #DDDDDD;
+    height: 108px;
+    padding: 25px;
+    width: 192px;
+}
+
+.insurance-for {
+    color: #444444;
+    font-family: Muli;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    text-align: left;
+}
+
+.one-way {
+    color: #000000;
+    font-family: Muli;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: left;
+}
+
+.return {
+    color: #FFAA00;
+    font-family: Muli;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: left;
+}
+
+.hide-border-1 {
+    /* outline: none;
+    border: none;
+    background: none; */
+    box-shadow: none;
+    border: transparent;
+}
+
+.hide-border-2 {
+    /* outline: none;
+    border: none;
+    background: none; */
+    box-shadow: none;
+    border: transparent;
+}
+
+.rectangle-13-copy-2 {
+    background-color: #fb0;
+    border-radius: 4px;
+    width: 135px;
+    height: 51px;
+}
+
+.get-quote {
+    color: #000000;
+    font-family: Muli;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 18px;
+    text-align: left;
+}
+
+:host ::ng-deep typeahead-container.dropdown-menu {
+    left: -1.4%!important;
+    width: 225px;
+    margin-top: 22px;
+    color: black;
+    max-height: 200px !important;
+    overflow: auto !important;
+}
+
+:host ::ng-deep .dropdown-item.active, .dropdown-item:active {
+    background-color: white;
+    color: #fb0;
+}
+
+::ng-deep.theme-red .bs-datepicker-head {
+    background-color: #fb0;
+}
+
+::ng-deep.theme-red .bs-datepicker-body table td span.selected, .theme-red .bs-datepicker-body table td.selected span, .theme-red .bs-datepicker-body table td span[class*="select-"]:after, .theme-red .bs-datepicker-body table td[class*="select-"] span:after {
+    background-color: #fb0;
+}
+
+::ng-deep.bs-datepicker-body {
+    min-width: 334px;
+}
+
+::ng-deep bs-datepicker-container.bottom.ng-star-inserted {
+    left: 223px !important;
+    top: 108px !important;
+    right: auto !important;
+    transform: none !important;
+    will-change: unset !important;
+}

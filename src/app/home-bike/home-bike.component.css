@@ -1,0 +1,135 @@
+.mask {
+    color: white;
+    color: white;
+    position: relative;
+    top: 100px;
+    left: 50px;
+}
+
+.icon {
+    float: right;
+    position: relative;
+    top: -31px;
+    border: transparent;
+    background: white;
+    outline: none;
+    padding-top: 40px;
+    opacity: 0.7;
+    color: #444444;
+    margin-right: 11px;
+}
+
+::placeholder {
+    font-size: 19px;
+    opacity: 0.6;
+}
+
+.path-2-copy-2 {
+    border: 1px solid #DDDDDD;
+    padding-top: 25px;
+    width: 20%;
+}
+
+.path-2-copy-0 {
+    border: 1px solid #DDDDDD;
+    padding-top: 25px;
+    width: 33%;
+}
+
+.path-2-copy-3 {
+    border: 1px solid #DDDDDD;
+    height: 108px;
+    max-width: 15%;
+    padding: 22px;
+    padding-left: 17px;
+    padding-top: 27px;
+}
+
+.insurance-for {
+    color: #444444;
+    font-family: Muli;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1px;
+    padding: 0 11px;
+}
+
+.one-way {
+    color: #000000;
+    font-family: Muli;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: left;
+}
+
+.return {
+    color: #FFAA00;
+    font-family: Muli;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: left;
+}
+
+.hide-border-1 {
+    /* outline: none;
+    border: none;
+    background: none; */
+    box-shadow: none;
+    border: transparent;
+}
+
+.hide-border-2 {
+    /* 
+    border: none;
+    background: none; */
+    box-shadow: none;
+    border: transparent;
+    outline: none;
+    width: 338px;
+}
+
+.rectangle-13-copy-2 {
+    background-color: #FB0;
+    border-radius: 4px;
+    width: 135px;
+    height: 50px;
+    border: 1px solid #fb0;
+    outline: none;
+}
+
+.get-quote {
+    padding: 16px;
+    font-size: 18px;
+    color: #000;
+    font-weight: bolder;
+}
+
+input:read-only {
+    font-size: 15px;
+    background: white;
+}
+
+:host ::ng-deep typeahead-container.dropdown-menu {
+    display: block;
+    overflow-y: scroll;
+    overflow-x: auto;
+    visibility: visible;
+    will-change: transform;
+    width: 606px;
+    top: 25px !important;
+    left: -1px !important;
+    transform: none;
+    max-height: 169px;
+}
+
+:host ::ng-deep .dropdown-item.active, .dropdown-item:active {
+    background-color: white;
+    border: 1px solid white;
+    color: #fb0;
+}
+
+:host ::ng-deep .ng-trigger-typeaheadAnimation {
+    outline: none !important;
+}

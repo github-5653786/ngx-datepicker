@@ -1,0 +1,71 @@
+<body class="bd">
+    <form #frmname="ngForm" class="form-inline" (ngSubmit)="frmname.form.valid && onSubmit()">
+        <div class="form-group">
+            <div class="input-group">
+                <div class="mask">
+                    <div class="path-2-copy-2">
+                        <p class="insurance-for">Residential Country</p>
+                        <input type="text" autocomplete="off" [typeahead]="states" class="form-control hide-border-1"
+                            placeholder="Search City" [(ngModel)]="city2" name="city" id="city" #city="ngModel"
+                            required>
+                        <div *ngIf="city.errors && (city.dirty || city.touched|| frmname.submitted)" style="color: red; font-size: 13px;
+                            padding-left: 32px;">
+                            <div *ngIf="city.errors.required" style="color: red;font-size: 13px;padding-left: 16px;">
+                                Country is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="path-2-copy-2">
+                        <p class="insurance-for">Departure</p>
+                        <input type="text" autocomplete="off" id="date1" #dp="bsDatepicker"
+                            placeholder="Select Departure date" class="form-control hide-border-1" bsDatepicker
+                            [bsConfig]="{ isAnimated: true, dateInputFormat: 'DD-MM-YYYY',
+                               containerClass: 'theme-red',displayMonths:2 , showWeekNumbers:false}"
+                            [(bsValue)]="newVar" value="{{ newVar | date:'dd/MM/yyyy' }}" [minDate]="minDate1"
+                            [maxDate]="maxDate1" required [(ngModel)]="departureDate" 
+                            (ngModelChange)="departureDateMethod($event)" id="fname" #fname1="ngModel" name="diparture">
+                        <span class="btn btn-outlin-secondary hide-border-2" (click)="dp.toggle()">
+                            <i class='fas fa-angle-down'></i>
+                        </span>
+                        <div *ngIf="fname1.errors && (fname1.dirty || fname1.touched|| frmname.submitted)" style="color: red;    font-size: 13px;
+                            padding-left: 32px;">
+                            <div *ngIf="fname1.errors.required">
+                                Departure date is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="path-2-copy-4">
+                        <p class="insurance-for">Return</p>
+                        <input type="text" id="date2" #dp2="bsDatepicker" placeholder="Select Return date"
+                            class="form-control hide-border-1" bsDatepicker [bsConfig]="{ isAnimated: true, dateInputFormat: 'DD-MM-YYYY',
+                                containerClass: 'theme-red',displayMonths:2 , showWeekNumbers:false}"
+                            [(bsValue)]="newVar2" value="{{ newVar2 | date:'dd/MM/yyyy' }}" [minDate]="minDate2"
+                            [maxDate]="maxDate2" required [(ngModel)]=fnamee id="fname" #fname2="ngModel" name="Return"
+                            autocomplete="off">
+                        <span class="btn btn-outlin-secondary hide-border-2" (click)="dp2.toggle()">
+                            <i class='fas fa-angle-down'></i>
+                        </span>
+                        <div *ngIf="fname2.invalid && (fname2.dirty || fname2.touched ||  frmname.submitted)" style="color: red;font-size: 13px;
+                            padding-left: 32px;">
+                            <div *ngIf="fname2.errors.required">
+                                Return date is required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="path-2-copy-3">
+                        <button type="submit" class="rectangle-13-copy-2">
+                            <span class="get-quote">Get Quote</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+
+<!-- <h2>Hi i am Rahul..........!</h2>
+<button (click)="fun()">Ajax OK</button>
+<p id="data"></p> -->
+
+<!-- <input type="text" name="Nn" id="nm" [(ngModel)]=jj (keyup)="(jj.length>=3) && m()"> -->

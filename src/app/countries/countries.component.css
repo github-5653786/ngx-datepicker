@@ -1,0 +1,19 @@
+:host ::ng-deep typeahead-container.dropdown-menu {
+    display: block;
+    overflow-y: scroll;
+    overflow-x: auto;
+    visibility: visible;
+    will-change: transform;
+    width: 606px;
+    max-height: 200px;
+}
+
+:host ::ng-deep .dropdown-item.active, .dropdown-item:active {
+    background-color: white;
+    border: 1px solid white;
+    color: #fb0;
+}
+
+:host ::ng-deep .ng-trigger-typeaheadAnimation {
+    outline: none !important;
+}
