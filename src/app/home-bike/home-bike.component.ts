@@ -21,7 +21,15 @@ export class HomeBikeComponent {
 
   vehicle_code: any;
 
-  constructor(private callService: AutocompleteServiceService) { }
+  search: boolean;
+  delete: boolean;
+  gif: boolean;
+
+  constructor(private callService: AutocompleteServiceService) {
+    this.search = true;
+    this.delete = false;
+    this.gif = false;
+  }
 
   bikebrand(e: any) {
     let Value = e;
@@ -55,11 +63,12 @@ export class HomeBikeComponent {
     const reqData = {
       make: selectedBike.make,
       model: selectedBike.model
-    }  
+    }
 
     this.callService.posts(reqData).subscribe(data => {
       let post = data.json();
       post = JSON.parse(post);
+      
       for (let i = 0; i <= post.length - 1; i++) {
         this.vehicle.push(post[i]);
       }
@@ -90,9 +99,11 @@ export class HomeBikeComponent {
   deleteInputs() {
     (document.getElementById("city") as HTMLInputElement).value = '';
   }
-  deleteInputs2() {
+
+  deleteInput() {
     (document.getElementById("varient") as HTMLInputElement).value = '';
   }
+
   autoFocusOnfirstInput() {
     let a = (document.getElementById("city") as HTMLInputElement).value;
     let b = (document.getElementById("city") as HTMLInputElement).value;
@@ -104,33 +115,32 @@ export class HomeBikeComponent {
       (document.getElementById("varient") as HTMLInputElement).value = '';
     }
   }
-  onBlur() {
-    document.getElementById("show").style.display = "block";
-    document.getElementById("hide").style.display = "none";
-  }
-  onBlur2() {
-    document.getElementById("show2").style.display = "block";
-    document.getElementById("hide2").style.display = "none";
-  }
-  hide() {
-    setTimeout(function () {
-      document.getElementById("show").style.display = "none";
-      document.getElementById("hide").style.display = "block";
-    }, 100);
-  }
-  hide2() {
-    setTimeout(function () {
-      document.getElementById("show2").style.display = "none";
-      document.getElementById("hide2").style.display = "block";
-    }, 100);
-  }
+
   onSubmit() {
     alert("submitted");
+    window.location.reload();
   }
 
-
-
-
-
+  deleted() {
+    let a = (document.getElementById("city") as HTMLInputElement).value;
+    if (a != '') {
+      this.delete = true;
+      this.search = false;
+    } else {
+      this.search = true;
+      this.delete = false;
+    }
+  }
+  changetxt() {
+    let a = setInterval(() => {
+      (document.getElementById("btn") as HTMLInputElement).value = '';
+      this.gif = true;
+    }, 100);
+    setTimeout(() => {
+      clearInterval(a);
+      this.gif = false;
+      (document.getElementById("btn") as HTMLInputElement).value = "Get Quote";
+    }, 2000);
+  }
 }
 

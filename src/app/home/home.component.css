@@ -81,6 +81,8 @@
     background-color: #fb0;
     border-radius: 4px;
     width: 135px;
+    border: none;
+    outline: none;
     height: 51px;
 }
 

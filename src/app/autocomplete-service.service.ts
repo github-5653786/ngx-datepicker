@@ -9,7 +9,6 @@ export class AutocompleteServiceService {
   constructor(private http: Http) { }
 
   callget() {
-
     let _url1: string = "https://direct-prod-directportal.godigit.com/DirectPortal/international/travel/countries";
     return this.http.get(_url1);
   }

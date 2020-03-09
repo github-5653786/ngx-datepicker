@@ -41,7 +41,14 @@ export class HomeComponent implements OnInit {
       let response = data.json();
       console.log(response.options.length);
       for (let i = 0; i <= response.options.length - 1; i++) {
-        this.states.push(response.options[i].label);
+        let a = response.options[i].label;
+        if (a.includes("_N")) {
+          let b = a.replace("_N", "");
+          this.states.push(b);
+        } else {
+          this.states.push(a);
+        }
+
       }
     });
   }

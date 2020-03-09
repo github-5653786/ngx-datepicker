@@ -7,7 +7,7 @@
             </label>
             <input type="text" class="form-control" name="email" ngModel required [(ngModel)]=email #email1="ngModel"
                 autocomplete="off" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" maxlength="10">
-            <div *ngIf="email1.touched || email1.errors?.required && for.submitted">
+            <div *ngIf="email1.errors && (email1.dirty || email1.touched || for.submitted)">
                 <div *ngIf="email1.errors?.pattern" class="error">
                     Invalid Email.
                 </div>
@@ -25,10 +25,9 @@
             </label>
             <input type="password" class="form-control" id="Password" name="pass1" ngModel required [(ngModel)]=pass
                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" #pass1="ngModel" maxlength="15" autocomplete="off">
-            <span class="error">{{ 15 - pass.length }} characters left</span>
             <span *ngIf="showIcon" (click)="iconHide()" class="icon"><i class='fas fa-eye'></i></span>
             <span *ngIf="showIcons" (click)="iconHide()" class="icon"><i class='fas fa-eye-slash'></i></span>
-            <div *ngIf="pass1.touched || pass1.errors?.required && for.submitted">
+            <div *ngIf="pass1.errors && (pass1.dirty || pass1.touched || for.submitted)">
                 <div *ngIf="pass1.errors?.required" class="error">
                     Password is Required.
                 </div>

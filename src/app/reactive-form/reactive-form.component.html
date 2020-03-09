@@ -32,7 +32,7 @@
 <!-- Another form example -->
 
 <div class="container">
-    <form [formGroup]="myform" #frmname="ngForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="myform" #frmname="ngForm" (ngSubmit)="frmname.valid && onSubmit()">
 
         <fieldset formGroupName="name">
             <div class="form-group" [ngClass]="{
@@ -41,7 +41,8 @@
         }">
                 <label>First Name</label>
                 <input type="text" class="form-control" formControlName="firstName" required>
-                <div class="form-control-feedback" *ngIf="firstName.errors && (firstName.dirty || firstName.touched)">
+                <div class="form-control-feedback"
+                    *ngIf="firstName.errors && (firstName.dirty || firstName.touched || frmname.submitted)">
                     <p *ngIf="firstName.errors.required">First Name is required</p>
                 </div>
             </div>
@@ -52,7 +53,8 @@
         }">
                 <label>Last Name</label>
                 <input type="text" class="form-control" formControlName="lastName" required>
-                <div class="form-control-feedback" *ngIf="lastName.errors && (lastName.dirty || lastName.touched)">
+                <div class="form-control-feedback"
+                    *ngIf="lastName.errors && (lastName.dirty || lastName.touched || frmname.submitted)">
                     <p *ngIf="lastName.errors.required">Last Name is required</p>
                 </div>
             </div>
@@ -65,7 +67,8 @@
      }">
             <label>Email</label>
             <input type="email" class="form-control" formControlName="email" required>
-            <div class="form-control-feedback" *ngIf="email.errors && (email.dirty || email.touched)">
+            <div class="form-control-feedback"
+                *ngIf="email.errors && (email.dirty || email.touched || frmname.submitted)">
                 <p *ngIf="email.errors.required">Email is required</p>
                 <p *ngIf="email.errors.pattern">The email address must contain at least the @ character</p>
             </div>
@@ -78,7 +81,8 @@
             <input type="password" class="form-control" id="Password" formControlName="password" required>
             <span *ngIf="showIcon" (click)="iconHide()" class="icon"><i class='fas fa-eye'></i></span>
             <span *ngIf="showIcons" (click)="iconHide()" class="icon"><i class='fas fa-eye-slash'></i></span>
-            <div class="form-control-feedback" *ngIf="password.errors && (password.dirty || password.touched)">
+            <div class="form-control-feedback"
+                *ngIf="password.errors && (password.dirty || password.touched || frmname.submitted)">
                 <p *ngIf="password.errors.required">Password is required</p>
                 <p *ngIf="password.errors.minlength">Password must be 8 characters long, we need another
                     {{password.errors.minlength.requiredLength - password.errors.minlength.actualLength}} characters
@@ -86,7 +90,7 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary" [disabled]="!myform.valid">Submit
+        <button type="submit" class="btn btn-primary">Submit
         </button>
     </form>
 </div>

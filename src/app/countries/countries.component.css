@@ -4,7 +4,7 @@
     overflow-x: auto;
     visibility: visible;
     will-change: transform;
-    width: 606px;
+    width:98%;
     max-height: 200px;
 }
 
@@ -16,4 +16,10 @@
 
 :host ::ng-deep .ng-trigger-typeaheadAnimation {
     outline: none !important;
+}
+
+@media only screen and (max-width:768px) {
+    :host ::ng-deep typeahead-container.dropdown-menu {
+        width: 383px;
+    }
 }

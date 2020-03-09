@@ -1,8 +1,8 @@
 <div class="container">
     <div class="row">
-        <div class="col">
+        <div class="col-lg-12 col-12">
             <label for="name">Search Country Name</label>
-            <input [(ngModel)]="selected" [typeahead]="country" id="name" (ngModelChange)="fun()" class="form-control">
+            <input [(ngModel)]="selected" autocomplete="off" [typeahead]="country" id="name" class="form-control">
         </div>
     </div>
 </div>
